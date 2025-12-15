@@ -5,8 +5,8 @@ interface TextButtonProps extends ComponentProps<"div">{
 
     children: ReactNode,
     color: string,
-    colorHover: string,
-    colorActive: string,
+    colorHover?: string,
+    colorActive?: string,
 
 }
 

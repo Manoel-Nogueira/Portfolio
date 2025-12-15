@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tiny5&display=swap");
 @import "tailwindcss";
 
 html {
@@ -17,13 +20,16 @@ html {
   --font-manrope: "Manrope", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-geo: "Geo", sans-serif;
+  --font-jersey: "Jersey 10", sans-serif;
+  --font-micro: "Micro 5", sans-serif;
+  --font-tiny: "Tiny5", sans-serif;
 
   @keyframes horizontal {
     0% {
-      background-position: 0% 0;
+      background-position: 0%;
     }
     100% {
-      background-position: 200% 0;
+      background-position: 100%;
     }
   }
 
@@ -32,4 +38,3 @@ html {
 .animate-horizontal {
   animation: horizontal 60s linear infinite;
 }
-

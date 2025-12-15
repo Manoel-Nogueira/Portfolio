@@ -2,14 +2,18 @@
 
 import Image from "next/image";
 import TextType from "@/components/text_type";
-import { TextButton } from "@/components/text_button";
-import { useState } from "react";
 import Link from "next/link";
+import { TextButton } from "@/components/text_button";
+import { useEffect, useState } from "react";
+import { motion, stagger } from "motion/react";
+import { ToolIcons } from "@/components/tool_icons";
+import { useInView } from "react-intersection-observer";
 
 // Font
 //
 // #4C98FF
 // #1D79F1
+// #E9E9E9
 
 // Background / NavBar
 //
@@ -19,13 +23,14 @@ import Link from "next/link";
 
 export default function Home() {
 
- const  [langEN, setLangEN] = useState(true);
+  const [langEN, setLangEN] = useState(true)
+  const [psyduckKey, setPysyduckKey] = useState(0)
 
- function toggleLang () {
+  function toggleLang () {
 
     setLangEN(!langEN)
 
- }
+  }
 
   return (
 
@@ -35,7 +40,7 @@ export default function Home() {
 
         <div>
           <Link href="#home" prefetch={false}>
-            <img src="/resources/images/otter.svg" alt="otter" className="scale-x-[-1]"/>
+            <Image src="/resources/images/otter.svg" height={40} width={128} alt="otter" className="scale-x-[-1]"/>
           </Link>
         </div>
 
@@ -63,9 +68,9 @@ export default function Home() {
 
       </header>
 
-      <main className="px-15">
+      <main className="px-15 w-full">
 
-        <div id="home" className="h-screen flex items-center">
+        <div id="home" className="h-screen flex items-center justify-around">
 
           <div className="w-[50%] font-manrope font-bold text-[#4C98FF]">
 
@@ -94,13 +99,30 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center w-[50%] drop-shadow-2xl drop-shadow-[#1D1933]">
-            <img src="/resources/images/example.jpg" alt="me" className="h-100 w-80 mask-[url(/resources/images/masks/blob.svg)] mask-size-[21.8rem] mask-no-repeat mask-center"/>
+            <Image src="/resources/images/example-home.jpg" height={1200} width={845} alt="me" className="h-100 w-80 mask-[url(/resources/images/masks/blob.svg)] mask-size-[21.8rem] mask-no-repeat mask-center"/>
           </div>
           
         </div>
 
-        <div id="skills" className="h-screen flex items-center justify-center text-[#FFFFFF]">
-          Skills
+        <div id="skills" className="h-screen flex items-center justify-around">
+          
+          <motion.div className="w-auto grid grid-cols-4 gap-20 drop-shadow-2xl drop-shadow-[#312A57]" variants={{ show: { transition: {delayChildren: 1, staggerChildren: 0.1 } }}} initial="hidden" whileInView="show">
+            
+            <ToolIcons icon="/resources/images/pixelarts/c.svg" name="C" labelColor="text-[#E9E9E9]" height={100} width={100}/>
+            <ToolIcons icon="/resources/images/pixelarts/spring-boot.svg" name="Spring Boot" labelColor="text-[#E9E9E9]" height={100} width={100}/>
+            <ToolIcons icon="/resources/images/pixelarts/css.svg" name="CSS" labelColor="text-[#E9E9E9]" height={100} width={100}/>
+            <ToolIcons icon="/resources/images/pixelarts/html.svg" name="HTML" labelColor="text-[#E9E9E9]" height={100} width={100}/>
+            <ToolIcons icon="/resources/images/pixelarts/java-script.svg" name="JavaScript" labelColor="text-[#E9E9E9]" height={100} width={100}/>
+            <ToolIcons icon="/resources/images/pixelarts/type-script.svg" name="TypeScript" labelColor="text-[#E9E9E9]" height={100} width={100}/>
+            <ToolIcons icon="/resources/images/pixelarts/tailwind-css.svg" name="Tailwind CSS" labelColor="text-[#E9E9E9]" height={100} width={100}/>
+            <ToolIcons icon="/resources/images/pixelarts/php.svg" name="PHP" labelColor="text-[#E9E9E9]" height={100} width={100}/>
+
+          </motion.div>
+
+          <motion.div onViewportEnter={() => setPysyduckKey((psyduckKey + 1))} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.1, scale: { type: "spring", visualDuration: 0.1, bounce: 0.5 }}} className="drop-shadow-2xl drop-shadow-[#312A57]" >
+            <img key={psyduckKey} className="" src="/resources/images/pixelarts/psyduck.gif" height={500} width={500} alt="psyduck"/>
+          </motion.div>
+
         </div>
 
         <div id="projects" className="h-screen flex items-center justify-center text-[#FFFFFF]">
