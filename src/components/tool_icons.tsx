@@ -1,14 +1,14 @@
 import { ComponentProps } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { TextButton } from "./text_button";
+import { Text } from "./text";
 
 
 interface ToolIconsProps extends ComponentProps<"div"> {
 
     icon: string,
     name: string,
-    labelColor: string,
+    label: string,
     height: number,
     width: number
 
@@ -25,9 +25,9 @@ export function ToolIcons (props: ToolIconsProps) {
             </motion.div>
 
             <motion.div className="pt-1 text-center text-[1.4rem] font-tiny" variants={{ hidden: { opacity: 0, scale: 0}, show: {opacity: 1, scale: 1, transition: {duration: 0.05, scale: { type: "spring", bounce: 0.5 } }}}}>
-                <TextButton color={props.labelColor}>    
+                <Text className={props.label}>    
                     {props.name}
-                </TextButton>
+                </Text>
             </motion.div>
 
         </div>

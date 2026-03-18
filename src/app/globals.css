@@ -5,6 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tiny5&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 @import "tailwindcss";
 
 html {
@@ -14,15 +17,16 @@ html {
 
 @theme inline {
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-jockey: "Jockey One", sans-serif; 
   --font-manrope: "Manrope", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-geo: "Geo", sans-serif;
   --font-jersey: "Jersey 10", sans-serif;
-  --font-micro: "Micro 5", sans-serif;
   --font-tiny: "Tiny5", sans-serif;
+  --font-lexend: "Lexend Deca", sans-serif;
+  --font-silkscreen: "Silkscreen", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-alata: "Alata", sans-serif;
 
   @keyframes horizontal {
     0% {
@@ -32,9 +36,39 @@ html {
       background-position: 100%;
     }
   }
+  
+  @keyframes fade-in-right {
+    0% {
+      transform: translateX(100px) scale(0.75);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0px) scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-left {
+    0% {
+      transform: translateX(-100px) scale(0.75);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0px) scale(1.1);
+      opacity: 1;
+    }
+  }
 
 }
 
 .animate-horizontal {
   animation: horizontal 60s linear infinite;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
