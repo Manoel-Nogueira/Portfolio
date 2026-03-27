@@ -85,17 +85,17 @@ export function Projects () {
     
     return ( 
 
-        <motion.div className="flex items-center mb-30 drop-shadow-2xl drop-shadow-[#312A57]" initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 1, scale: { type: "spring", visualDuration: 0.1, bounce: 0.1 }}}>
+        <div className="flex items-center mb-30 drop-shadow-2xl drop-shadow-[#312A57]">
 
             <HiArrowCircleLeft onClick={() => changeId(currentId, enumIterator.LEFT)} className="text-[8rem] text-[#1D79F1] hover:text-[#4C98FF] active:text-[#1662C1] hover:scale-110 active:scale-85 ease-linear duration-50"/>
 
             <ProjectContent className="scale-75 z-0 brightness-80 blur-xs select-none pointer-events-none" imageUrl={projects[currentId].imageUrl} height={height} width={width} title={projects[currentId].name} description={projects[currentId].description} toolsUsed={projects[currentId].toolsUsed} githubUrl={projects[currentId].githubUrl} pageUrl={projects[currentId].pageUrl}></ProjectContent>
-            <ProjectContent key={currentId + 1} className={twMerge("z-10 brightness-105 border-2 border-[#1D79F1]", direction == 1 ? "animate-fade-in-right" : "animate-fade-in-left")} imageUrl={projects[(currentId + 1) % projects.length].imageUrl} height={height} width={width} title={projects[(currentId + 1) % projects.length].name} description={projects[(currentId + 1) % projects.length].description} toolsUsed={projects[(currentId + 1) % projects.length].toolsUsed} githubUrl={projects[(currentId + 1) % projects.length].githubUrl} pageUrl={projects[(currentId + 1) % projects.length].pageUrl}></ProjectContent>
+            <ProjectContent key={currentId + 1} className={twMerge("z-10 brightness-105 border-2 border-[#1D79F1]/50", direction == 1 ? "animate-fade-in-right" : "animate-fade-in-left")} imageUrl={projects[(currentId + 1) % projects.length].imageUrl} height={height} width={width} title={projects[(currentId + 1) % projects.length].name} description={projects[(currentId + 1) % projects.length].description} toolsUsed={projects[(currentId + 1) % projects.length].toolsUsed} githubUrl={projects[(currentId + 1) % projects.length].githubUrl} pageUrl={projects[(currentId + 1) % projects.length].pageUrl}></ProjectContent>
             <ProjectContent className="scale-75 z-0 brightness-80 blur-xs select-none pointer-events-none" imageUrl={projects[(currentId + 2) % projects.length].imageUrl} height={height} width={width} title={projects[(currentId + 2) % projects.length].name} description={projects[(currentId + 2) % projects.length].description} toolsUsed={projects[(currentId + 2) % projects.length].toolsUsed} githubUrl={projects[(currentId + 2) % projects.length].githubUrl} pageUrl={projects[(currentId + 2) % projects.length].pageUrl}></ProjectContent>
 
             <HiArrowCircleRight onClick={() => changeId(currentId, enumIterator.RIGHT)} className="text-[8rem] text-[#1D79F1] hover:text-[#4C98FF] active:text-[#1662C1] hover:scale-110 active:scale-85 ease-linear duration-50"/>
 
-        </motion.div>
+        </div>
 
     )
 

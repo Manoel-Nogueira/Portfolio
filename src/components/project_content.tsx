@@ -23,7 +23,7 @@ export function ProjectContent (props: ProjectContentProps) {
 
     return (
 
-        <div className={twMerge(props.className, "bg-[#1F3A65] max-w-[33.313rem] max-h-[27.876rem] w-full h-full p-[1rem] flex flex-col items-center justify-start leading-none gap-y-[0.2rem] rounded-3xl")}>
+        <div className={twMerge(props.className, "bg-[#1F3A65]/40 max-w-[33.313rem] max-h-[27.876rem] w-full h-full p-[1rem] flex flex-col items-center justify-start leading-none gap-y-[0.2rem] rounded-3xl")}>
     
             <Image src={props.imageUrl} height={props.height} width={props.width} alt={props.title} className="max-h-[13.938rem] object-cover rounded-xl select-none"/>
 

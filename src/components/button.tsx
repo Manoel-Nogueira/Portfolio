@@ -15,7 +15,7 @@ export function Button (props: ButtonProps) {
     return (
 
 
-        <a href={props.url} target="_blank">
+        <a href={props.url} target="_blank" className="text-[0rem]">
             <button type={props.type} onClick={props.onClick}>
                 {props.children}
             </button>
