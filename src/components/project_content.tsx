@@ -23,21 +23,21 @@ export function ProjectContent (props: ProjectContentProps) {
 
     return (
 
-        <div className={twMerge(props.className, "bg-[#1F3A65]/40 max-w-[33.313rem] max-h-[27.876rem] w-full h-full p-[1rem] flex flex-col items-center justify-start leading-none gap-y-[0.2rem] rounded-3xl")}>
+        <div className={twMerge(props.className, "bg-[#1F3A65]/40  max-w-[34rem] max-h-[34rem] 2xl:max-h-[50rem] w-full h-full p-[1rem] flex flex-col items-center justify-start leading-none gap-y-[0.2rem] rounded-3xl")}>
     
-            <Image src={props.imageUrl} height={props.height} width={props.width} alt={props.title} className="max-h-[13.938rem] object-cover rounded-xl select-none"/>
+            <Image src={props.imageUrl} height={props.height} width={props.width} alt={props.title} className="max-h-[14rem] 2xl:max-h-[18rem] object-cover rounded-xl select-none"/>
 
-            <Text className="text-[#E9E9E9] text-center subpixel-antialiased font-jersey text-[2.5rem]">{props.title}</Text>
+            <Text className="text-[#E9E9E9] text-center subpixel-antialiased font-jersey text-[1.6rem] sm:text-[2.5rem]">{props.title}</Text>
             
             <div className="flex flex-col items-center justify-between grow gap-y-[0.7rem] ">
 
-                <Text className="text-[#1D79F1] font-alata text-justify">{props.description}</Text>
+                <Text className="text-[#1D79F1] font-alata text-center sm:text-justify text-[1rem] sm:text-[1.1rem]">{props.description}</Text>
 
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-3 sm:grid-cols-3 2xl:grid-cols-4 gap-1 sm:gap-2">
                     
                     {props.toolsUsed.map((tool) => (
 
-                        <Text key={tool} className="text-[#E9E9E9] bg-[#14294A] p-1 rounded-sm text-center font-jockey text-[1.0rem]">{tool}</Text>
+                        <Text key={tool} className="text-[#E9E9E9] bg-[#14294A] p-1 rounded-sm text-center font-jockey text-[0.8rem] sm:text-[0.9rem]">{tool}</Text>
 
                     ))}
 
@@ -49,13 +49,13 @@ export function ProjectContent (props: ProjectContentProps) {
 
                 {props.githubUrl && 
                     <Button type="button" url={props.githubUrl}>
-                        <IoLogoGithub className="cursor-pointer text-[1.7rem] text-[#1D79F1] hover:text-[#4C98FF] active:text-[#1662C1] hover:scale-110 active:scale-85 ease-linear duration-50"/>
+                        <IoLogoGithub className="cursor-pointer text-[1.4rem] sm:text-[1.7rem] text-[#1D79F1] hover:text-[#4C98FF] active:text-[#1662C1] hover:scale-110 active:scale-85 ease-linear duration-50"/>
                     </Button>
                 }
 
                 {props.pageUrl && 
                     <Button type="button" url={props.pageUrl} className="">
-                        <MdOpenInBrowser  className="cursor-pointer text-[1.95rem] text-[#1D79F1] hover:text-[#4C98FF] active:text-[#1662C1] hover:scale-110 active:scale-85 ease-linear duration-50"/>
+                        <MdOpenInBrowser  className="cursor-pointer text-[1.6rem] sm:text-[1.95rem] text-[#1D79F1] hover:text-[#4C98FF] active:text-[#1662C1] hover:scale-110 active:scale-85 ease-linear duration-50"/>
                     </Button>
                 }
 
@@ -63,6 +63,5 @@ export function ProjectContent (props: ProjectContentProps) {
 
         </div>
     )
-
-
+    
 }

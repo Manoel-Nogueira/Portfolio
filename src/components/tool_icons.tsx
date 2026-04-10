@@ -24,7 +24,7 @@ export function ToolIcons (props: ToolIconsProps) {
                 <Image src={props.icon} height={props.height} width={props.width} alt={props.name} />
             </motion.div>
 
-            <motion.div className="pt-1 text-center text-[1.4rem] font-tiny" variants={{ hidden: { opacity: 0, scale: 0}, show: {opacity: 1, scale: 1, transition: {duration: 0.05, scale: { type: "spring", bounce: 0.5 } }}}}>
+            <motion.div className="pt-1 text-center text-[0.9rem] sm:text-[1.4rem] font-tiny" variants={{ hidden: { opacity: 0, scale: 0}, show: {opacity: 1, scale: 1, transition: {duration: 0.05, scale: { type: "spring", bounce: 0.5 } }}}}>
                 <Text className={props.label}>    
                     {props.name}
                 </Text>
